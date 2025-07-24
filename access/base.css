@@ -4,6 +4,7 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
+  --star-gold-color: #ffce3e;
   --header-height: 120px;
   --navbar-height: 34px;
   --header-with-search-height: calc(
@@ -19,6 +20,7 @@ html {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
 }
+/* Responsive */
 .grid {
   width: 1200px;
   max-width: 100%;
@@ -29,7 +31,25 @@ html {
 }
 .grid_row {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  margin-left: -5px;
+  margin-right: -5px;
+}
+/* test */
+.grid_column-2 {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 16.667%;
+}
+.grid_column-2-4 {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 20%;
+}
+.grid_column-10 {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 83.333%;
 }
 a {
   text-decoration: none;
@@ -60,6 +80,7 @@ a {
   right: 0;
   display: flex;
   animation: fadeIn linear 0.2s;
+  display: none;
 }
 .modal_overlay {
   position: absolute;
@@ -77,16 +98,17 @@ a {
 }
 /* button style */
 .btn {
-  min-width: 142px;
+  min-width: 124px;
   height: 34px;
   border: none;
   border-radius: 2px;
   font-size: 1.4rem;
   padding: 0;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--white-color);
 }
 .btn.btn-hover-nomal:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -105,3 +127,47 @@ a {
   color: #ccc;
   background-color: #c3c3c3;
 } */
+/* selec */
+.select-input {
+  position: relative;
+  min-width: 200px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-input:hover .select-input_list {
+  display: block;
+}
+.select-input_label {
+  font-size: 1.4rem;
+}
+.select-input-icon {
+  font-size: 1.4rem;
+  color: rgb(131, 131, 131);
+  position: relative;
+  top: 1px;
+}
+.select-input_list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25px;
+  background-color: var(--white-color);
+  border-radius: 2px;
+  list-style: none;
+  padding: 8px 16px;
+  display: none;
+}
+.select-input_link {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  display: block;
+  padding: 4px 0;
+}
+.select-input_link:hover {
+  color: var(--primary-color);
+}
